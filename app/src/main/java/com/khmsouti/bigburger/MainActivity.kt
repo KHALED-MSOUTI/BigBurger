@@ -30,14 +30,6 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
     private lateinit var pref: SharedPreferences
     private lateinit var prefEditor: SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        /*
-        TODO edit action bar transparency or fix it's color
-        window.requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY)
-        val actionBar = supportActionBar
-        actionBar!!.setBackgroundDrawable(ColorDrawable(Color.parseColor("#000000ff")))
-        actionBar.setStackedBackgroundDrawable(ColorDrawable(Color.parseColor("#000000ff")))
-        */
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -46,7 +38,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
 
         pref = this.getPreferences(0)
         prefEditor = pref.edit()
-
+        prefEditor.apply()
 
 
         //Handle swipe action for recyclerView and icon
@@ -63,7 +55,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 setSnackBar(
                     constraintLayout,
-                    "${list[viewHolder.adapterPosition].getTitle()} added to the cart".toString()
+                    "${list[viewHolder.adapterPosition].getTitle()} added to the cart"
                 )
                 //TODO Add swiped item to the cart
                 myAdapter.notifyDataSetChanged()
@@ -82,9 +74,9 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 setSnackBar(
                     constraintLayout,
-                    "${list[viewHolder.adapterPosition].getTitle()} Removed from the cart".toString()
+                    "${list[viewHolder.adapterPosition].getTitle()} Removed from the cart"
                 )
-                //TODO Add swiped item to the cart
+                //TODO remove swiped item from the cart
                 myAdapter.notifyDataSetChanged()
             }
         }

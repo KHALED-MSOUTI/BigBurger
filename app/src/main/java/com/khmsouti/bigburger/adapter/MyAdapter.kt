@@ -1,14 +1,15 @@
 package com.khmsouti.bigburger.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.khmsouti.bigburger.R
 import com.khmsouti.bigburger.model.Item
+import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 
@@ -17,7 +18,7 @@ class MyAdapter(private var itemList: ArrayList<Item>, var context: Context) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(
-            com.khmsouti.bigburger.R.layout.main_recyclerview_item,
+            R.layout.main_recyclerview_item,
             parent,
             false
         )
@@ -31,7 +32,7 @@ class MyAdapter(private var itemList: ArrayList<Item>, var context: Context) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val displayMetrics = context.resources.displayMetrics
         val dpWidth = displayMetrics.widthPixels
-        holder.layout.layoutParams.width = (dpWidth/2)
+        holder.layout.layoutParams.width = (dpWidth / 2)
 
         holder.textViewTitle.text = itemList[position].getTitle()
         holder.textViewPrice.text = getFinePrice(itemList[position].getPrice())
@@ -41,16 +42,22 @@ class MyAdapter(private var itemList: ArrayList<Item>, var context: Context) :
     }
 
     inner class MyViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
-        var layout: ConstraintLayout = itemView.findViewById(com.khmsouti.bigburger.R.id.ItemRootLayout)
-        var image: ImageView = itemView.findViewById(com.khmsouti.bigburger.R.id.mainItemImage)
-        var textViewTitle: TextView = itemView.findViewById(com.khmsouti.bigburger.R.id.mainItemTitle)
-        var textViewPrice: TextView = itemView.findViewById(com.khmsouti.bigburger.R.id.mainItemPrice)
-        var textViewInfo: TextView = itemView.findViewById(com.khmsouti.bigburger.R.id.mainItemInfo)
+        var layout: ConstraintLayout = itemView.findViewById(R.id.ItemRootLayout)
+        var image: ImageView = itemView.findViewById(R.id.mainItemImage)
+        var textViewTitle: TextView = itemView.findViewById(R.id.mainItemTitle)
+        var textViewPrice: TextView = itemView.findViewById(R.id.mainItemPrice)
+        var textViewInfo: TextView = itemView.findViewById(R.id.mainItemInfo)
 
         fun loadImage(url: String) {
-            //TODO handle no image error !!
-            Picasso.get().load(url).into(image)
+            Picasso.get().load(url).error(R.drawable.error).into(image, object : Callback {
+                override fun onError(e: Exception?) {
+                    //what to do if there is an error while downloading data
+                }
 
+                override fun onSuccess() {
+                }
+
+            })
         }
     }
 
@@ -61,6 +68,6 @@ class MyAdapter(private var itemList: ArrayList<Item>, var context: Context) :
             fPrice = "0$fPrice"
         }
 
-        return fPrice+"₺"
+        return fPrice + "₺"
     }
 }
