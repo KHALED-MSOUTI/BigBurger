@@ -51,4 +51,7 @@ dependencies {
     //spotlight
     implementation 'uk.co.samuelwall:material-tap-target-prompt:2.14.0'
 
+    //counterFab
+    implementation 'com.github.andremion:counterfab:1.2.1'
+
 }

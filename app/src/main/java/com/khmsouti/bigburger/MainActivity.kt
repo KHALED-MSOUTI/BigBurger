@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
+import com.andremion.counterfab.CounterFab
 import com.google.android.material.snackbar.Snackbar
 import com.khmsouti.bigburger.adapter.MyAdapter
 import com.khmsouti.bigburger.model.Item
@@ -29,6 +30,9 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
 
     private lateinit var pref: SharedPreferences
     private lateinit var prefEditor: SharedPreferences.Editor
+
+    private lateinit var counterFab: CounterFab
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -56,7 +60,9 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
                 setSnackBar(
                     constraintLayout,
                     "${list[viewHolder.adapterPosition].getTitle()} added to the cart"
+
                 )
+                counterFab.increase()
                 //TODO Add swiped item to the cart
                 myAdapter.notifyDataSetChanged()
             }
@@ -76,6 +82,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
                     constraintLayout,
                     "${list[viewHolder.adapterPosition].getTitle()} Removed from the cart"
                 )
+                counterFab.decrease()
                 //TODO remove swiped item from the cart
                 myAdapter.notifyDataSetChanged()
             }
@@ -84,6 +91,12 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         helperRight.attachToRecyclerView(recyclerView)
         val helperLeft = ItemTouchHelper(myCallbackLeft)
         helperLeft.attachToRecyclerView(recyclerView)
+
+        counterFab.setOnClickListener { view ->
+            //get the list , put it inside intent , move to cart activity
+            Toast.makeText(applicationContext, "Clicked", Toast.LENGTH_LONG).show()
+        }
+
     }
 
     override fun init() {
@@ -92,6 +105,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         val manager: RecyclerView.LayoutManager
         manager = androidx.recyclerview.widget.GridLayoutManager(applicationContext, 2)
         recyclerView.layoutManager = manager
+        counterFab = findViewById(R.id.counter_fab)
         mPresenter.getItems()
     }
 
