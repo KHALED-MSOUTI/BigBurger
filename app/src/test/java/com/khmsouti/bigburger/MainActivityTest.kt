@@ -1,15 +1,24 @@
 package com.khmsouti.bigburger
 
+import org.junit.Assert
 import org.junit.Test
 
 class MainActivityTest {
 
+    private val tested = MainActivity()
     @Test
-    fun getCartList() {
+    fun isFirstUseTest() {
+        Assert.assertEquals(true, tested.isFirstUse)
+    }
+
+
+    @Test
+    fun getCartListTest() {
     }
 
     @Test
-    fun loadData() {
+    fun loadDataTest() {
+
     }
 
     @Test

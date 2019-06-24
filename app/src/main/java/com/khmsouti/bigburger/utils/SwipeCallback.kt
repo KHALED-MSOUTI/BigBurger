@@ -11,6 +11,7 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 open class SwipeCallback(private var context: Context) :
     ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
     }
 
@@ -49,5 +50,6 @@ open class SwipeCallback(private var context: Context) :
             .decorate()
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
     }
+
 
 }

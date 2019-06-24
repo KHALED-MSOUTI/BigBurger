@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
     private lateinit var prefEditor: SharedPreferences.Editor
 
     // This boolean will used to know if the user is opening the application for the first time or not
-    private var isFirstUse: Boolean = true
+    var isFirstUse: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
             counterFab.setOnClickListener {
                 //get the list , put it inside intent , send it to cart activity
                 val intent = Intent(applicationContext, CartActivity::class.java)
-                intent.putExtra(getString(R.string.INTENT_TAG_TO_CART_ACTIVITY), cartList)
+                intent.putExtra(getString(R.string.SHARED_PREFERENCES_FIRST_USE_BOOLEAN), cartList)
                 startActivity(intent)
             }
         }
