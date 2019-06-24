@@ -1,5 +1,6 @@
 package com.khmsouti.bigburger
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -37,6 +38,12 @@ class CartActivity : AppCompatActivity(), CartActivityContract.View {
         initSwipe()
     }
 
+    override fun onBackPressed() {
+        val intent = Intent(applicationContext, MainActivity::class.java)
+        intent.putParcelableArrayListExtra("newTag", intentArrayList)
+        startActivity(intent)
+
+    }
 
     override fun loadData() {
         intent?.let {

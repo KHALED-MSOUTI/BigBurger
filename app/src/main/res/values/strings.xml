@@ -14,4 +14,5 @@
     <string name="TAX_RATE" translatable="false">18%</string>
     <string name="try_again">try again</string>
     <string name="no_internet_connection">No internet connection</string>
+    <string name="no_connection">No Connection</string>
 </resources>

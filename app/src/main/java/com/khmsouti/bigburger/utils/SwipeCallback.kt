@@ -44,7 +44,7 @@ open class SwipeCallback(private var context: Context) :
             .addSwipeRightBackgroundColor(ContextCompat.getColor(context, R.color.green))
             .addSwipeLeftBackgroundColor(ContextCompat.getColor(context, R.color.red))
             .addSwipeLeftActionIcon(R.drawable.ic_delete)
-            .addSwipeRightActionIcon(R.drawable.ic_plus_1)
+            .addSwipeRightActionIcon(R.drawable.ic_add_cart)
             .create()
             .decorate()
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)

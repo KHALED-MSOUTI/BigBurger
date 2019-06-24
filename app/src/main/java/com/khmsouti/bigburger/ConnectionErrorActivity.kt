@@ -13,6 +13,7 @@ class ConnectionErrorActivity : AppCompatActivity() {
         tryAgain.setOnClickListener {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
