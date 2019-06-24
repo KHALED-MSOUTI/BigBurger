@@ -11,7 +11,7 @@ interface MainActivityContract {
     }
 
     interface Presenter{
-        fun Start()
+        fun start()
         fun getItems()
     }
 }

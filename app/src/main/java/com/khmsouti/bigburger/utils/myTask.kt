@@ -1,4 +1,4 @@
-package com.khmsouti.bigburger.Utils
+package com.khmsouti.bigburger.utils
 
 import com.khmsouti.bigburger.callback.Callback
 import com.khmsouti.bigburger.model.Item

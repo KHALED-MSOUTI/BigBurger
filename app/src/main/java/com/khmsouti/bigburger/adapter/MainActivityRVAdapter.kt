@@ -13,8 +13,8 @@ import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
 
-class MyAdapter(private var itemList: ArrayList<Item>, var context: Context) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MainActivityRVAdapter(private var itemList: ArrayList<Item>, var context: Context) :
+    androidx.recyclerview.widget.RecyclerView.Adapter<MainActivityRVAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(

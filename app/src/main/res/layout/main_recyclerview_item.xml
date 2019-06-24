@@ -7,9 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="2dp"
-        android:background="@android:color/transparent"
->
-    <!--TODO fix design -->
+        android:background="@android:color/transparent">
 
     <LinearLayout
             android:orientation="vertical"
@@ -52,7 +50,7 @@
                     android:id="@+id/mainItemPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     android:textColor="@android:color/white"
                     tools:text="18.50 ₺"
                     android:layout_marginTop="8dp"

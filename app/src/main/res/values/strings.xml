@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">BigBurger</string>
+    <string name="total_amount">TOTAL AMOUNT</string>
+    <string name="cart_item">cart item</string>
+    <string name="taxes">taxes</string>
+    <string name="submit_order">Submit order</string>
+    <string name="spotLightFirstText">You can swipe right to add the item to the cart</string>
+    <string name="spotLightSecondText">Or you can delete it from the cart by swiping left !</string>
+
+
+    <!--Strings used in tags -->
+    <string name="SHARED_PREFERENCES_FIRST_USE_BOOLEAN" translatable="false">IS_FIRST_USE</string>
+    <string name="INTENT_TAG_TO_CART_ACTIVITY" translatable="false">TAG_TO_CART_ACTIVITY</string>
+    <string name="TAX_RATE" translatable="false">18%</string>
+    <string name="try_again">try again</string>
+    <string name="no_internet_connection">No internet connection</string>
 </resources>
