@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
         val intent = Intent(applicationContext, ConnectionErrorActivity::class.java)
         startActivity(intent)
+
     }
 
     override fun loadData(ItemList: ArrayList<Item>) {
