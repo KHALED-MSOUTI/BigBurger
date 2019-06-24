@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
             counterFab.setOnClickListener {
                 //get the list , put it inside intent , send it to cart activity
                 val intent = Intent(applicationContext, CartActivity::class.java)
-                intent.putExtra(getString(R.string.SHARED_PREFERENCES_FIRST_USE_BOOLEAN), cartList)
+                intent.putExtra("newTag", cartList)
                 startActivity(intent)
             }
         }
