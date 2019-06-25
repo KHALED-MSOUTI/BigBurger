@@ -1,4 +1,4 @@
-package com.khmsouti.bigburger
+package com.khmsouti.bigburger.contract
 
 interface CartActivityContract {
     interface View {
@@ -8,7 +8,7 @@ interface CartActivityContract {
     }
 
     interface Presenter {
-        fun Start()
+        fun start()
         fun fillData()
     }
 }

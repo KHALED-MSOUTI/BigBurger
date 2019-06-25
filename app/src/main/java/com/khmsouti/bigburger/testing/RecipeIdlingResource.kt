@@ -5,6 +5,7 @@ import androidx.test.espresso.IdlingResource
 
 class RecipeIdlingResource(private val waitingTime: Long) : IdlingResource {
 
+    //This class usage is for testing purposes
     private val startTime: Long = System.currentTimeMillis()
     private var callback: IdlingResource.ResourceCallback? = null
 

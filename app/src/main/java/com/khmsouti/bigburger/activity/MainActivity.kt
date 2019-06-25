@@ -1,4 +1,4 @@
-package com.khmsouti.bigburger
+package com.khmsouti.bigburger.activity
 
 import android.content.Context
 import android.content.Intent
@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.khmsouti.bigburger.R
 import com.khmsouti.bigburger.adapter.MainActivityRVAdapter
+import com.khmsouti.bigburger.contract.MainActivityContract
 import com.khmsouti.bigburger.model.Item
 import com.khmsouti.bigburger.presenter.ItemPresenter
 import com.khmsouti.bigburger.utils.SwipeCallback
@@ -63,11 +65,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
 
     override fun loadData(ItemList: ArrayList<Item>) {
         progressBar.visibility = View.VISIBLE
-        //Internet Connection Test
-        val connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
-        val isConnected: Boolean = activeNetwork?.isConnected ?: false
-        if (isConnected) {
+        if (isConnected()) {
             progressBar.visibility = View.GONE
             list = ItemList
             mainActivityRVAdapter = MainActivityRVAdapter(ItemList, this)
@@ -77,18 +75,19 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
             counterFab.setOnClickListener {
                 //get the list , put it inside intent , send it to cart activity
                 val intent = Intent(applicationContext, CartActivity::class.java)
-                intent.putExtra("newTag", cartList)
+                intent.putExtra(getString(R.string.INTENT_TAG_TO_CART_ACTIVITY), cartList)
                 startActivity(intent)
             }
-        }
+        } // else is not necessary because showError() method is handling no connection issues
+
         /*
           This block of code will trigger just when user
           come back from CartActivity to handle any
           modification that user may did it on his cart inside CartActivity.
         */
         intent?.let {
-            if (intent.hasExtra("newTag")) {
-                cartList = intent.getParcelableArrayListExtra("newTag")
+            if (intent.hasExtra(getString(R.string.INTENT_TAG_FROM_CART_ACTIVITY))) {
+                cartList = intent.getParcelableArrayListExtra(getString(R.string.INTENT_TAG_FROM_CART_ACTIVITY))
                 setCounterFabCount()
             }
         }
@@ -183,6 +182,13 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         } else {
             counterFab.visibility = View.INVISIBLE
         }
+    }
+
+    private fun isConnected(): Boolean {
+        //Internet Connection Test
+        val connectivityManager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
+        return activeNetwork?.isConnected ?: false
     }
 
 }

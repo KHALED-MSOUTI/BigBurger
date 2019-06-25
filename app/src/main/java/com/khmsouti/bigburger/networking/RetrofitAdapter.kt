@@ -7,6 +7,8 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitAdapter {
+    //Retrofit adapter connect the interface and calls together
+    //here all constants should be created
     private var sRetrofit: Retrofit? = null
     private var sGson: Gson? = null
     private val sURL: String = "http://legacy.vibuy.com/dump/"

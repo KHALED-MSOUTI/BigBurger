@@ -4,9 +4,9 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-
+//Data type
+//It present the data that comes from json
 open class Item() : Parcelable {
-
 
     @SerializedName("ref")
     private var ref: Int = 0

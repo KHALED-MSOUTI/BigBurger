@@ -9,8 +9,9 @@ import androidx.test.espresso.IdlingRegistry
 import androidx.test.espresso.NoMatchingViewException
 import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
+import com.khmsouti.bigburger.activity.MainActivity
 import com.khmsouti.bigburger.testing.RecipeIdlingResource
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
@@ -26,9 +27,11 @@ import java.util.concurrent.TimeUnit
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class InstrumentedTest {
     @get:Rule
-    var mainActivityActivityTestRule: ActivityTestRule<MainActivity> = ActivityTestRule(MainActivity::class.java)
+    var mainActivityActivityTestRule: ActivityTestRule<MainActivity> = ActivityTestRule(
+        MainActivity::class.java
+    )
 
 
     @Test
@@ -58,4 +61,6 @@ class ExampleInstrumentedTest {
             assertThat(adapter!!.itemCount, `is`(expectedCount))
         }
     }
+
+
 }

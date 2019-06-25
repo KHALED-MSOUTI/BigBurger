@@ -6,13 +6,15 @@
     <string name="submit_order">Submit order</string>
     <string name="spotLightFirstText">You can swipe right to add the item to the cart</string>
     <string name="spotLightSecondText">Or you can delete it from the cart by swiping left !</string>
-
+    <string name="tryAgain">try again</string>
+    <string name="noInternetConnection">No internet connection</string>
+    <string name="noConnection">No Connection</string>
+    <string name="TAX_RATE" translatable="false">18%</string>
 
     <!--Strings used in tags -->
     <string name="SHARED_PREFERENCES_FIRST_USE_BOOLEAN" translatable="false">IS_FIRST_USE</string>
     <string name="INTENT_TAG_TO_CART_ACTIVITY" translatable="false">TAG_TO_CART_ACTIVITY</string>
-    <string name="TAX_RATE" translatable="false">18%</string>
-    <string name="try_again">try again</string>
-    <string name="no_internet_connection">No internet connection</string>
-    <string name="no_connection">No Connection</string>
+    <string name="INTENT_TAG_FROM_CART_ACTIVITY" translatable="false">TAG_FROM_CART_ACTIVITY</string>
+
+
 </resources>

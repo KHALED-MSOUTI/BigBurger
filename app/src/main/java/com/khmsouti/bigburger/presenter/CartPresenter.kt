@@ -1,11 +1,12 @@
 package com.khmsouti.bigburger.presenter
 
-import com.khmsouti.bigburger.CartActivityContract
+import com.khmsouti.bigburger.contract.CartActivityContract
 
-class CartPresenter(var mView: CartActivityContract.View) : CartActivityContract.Presenter {
+class CartPresenter(private var mView: CartActivityContract.View) : CartActivityContract.Presenter {
 
+    //Presenters, part of MVP architecture
 
-    override fun Start() {
+    override fun start() {
         mView.init()
     }
 

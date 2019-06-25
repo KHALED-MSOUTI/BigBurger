@@ -1,4 +1,4 @@
-package com.khmsouti.bigburger
+package com.khmsouti.bigburger.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.khmsouti.bigburger.R
 import com.khmsouti.bigburger.adapter.CartActivityRVAdapter
+import com.khmsouti.bigburger.contract.CartActivityContract
 import com.khmsouti.bigburger.model.Item
 import com.khmsouti.bigburger.presenter.CartPresenter
 import com.khmsouti.bigburger.utils.SwipeCallback
@@ -22,7 +24,7 @@ class CartActivity : AppCompatActivity(), CartActivityContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
         mPresenter = CartPresenter(this)
-        mPresenter.Start()
+        mPresenter.start()
 
     }
 
@@ -40,7 +42,7 @@ class CartActivity : AppCompatActivity(), CartActivityContract.View {
 
     override fun onBackPressed() {
         val intent = Intent(applicationContext, MainActivity::class.java)
-        intent.putParcelableArrayListExtra("newTag", intentArrayList)
+        intent.putParcelableArrayListExtra(getString(R.string.INTENT_TAG_FROM_CART_ACTIVITY), intentArrayList)
         startActivity(intent)
 
     }
@@ -98,7 +100,7 @@ class CartActivity : AppCompatActivity(), CartActivityContract.View {
 
     }
 
-    private fun getPrice(oldPrice: String): Float {
+    fun getPrice(oldPrice: String): Float {
         var price = oldPrice.substring(0, oldPrice.length - 2) + "." + oldPrice.substring(oldPrice.length - 2)
         if (price.length == 3) price = "0$price"
         return price.toFloat()

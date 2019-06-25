@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.khmsouti.bigburger.R
-import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 
 open class SwipeCallback(private var context: Context) :
@@ -32,15 +31,12 @@ open class SwipeCallback(private var context: Context) :
         isCurrentlyActive: Boolean
     ) {
 
-        RecyclerViewSwipeDecorator.Builder(
+        SwipeDecorator.Builder(
             context,
             c,
-            recyclerView,
             viewHolder,
             dX,
-            dY,
-            actionState,
-            isCurrentlyActive
+            actionState
         )
             .addSwipeRightBackgroundColor(ContextCompat.getColor(context, R.color.green))
             .addSwipeLeftBackgroundColor(ContextCompat.getColor(context, R.color.red))

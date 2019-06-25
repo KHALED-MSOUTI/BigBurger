@@ -9,7 +9,8 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.*
 
-class myTask {
+class MyTask {
+    //Make retrofit call and link it by rxJva
     internal fun getJsonCallBack(callback: Callback<ArrayList<Item>>) {
         NetworkingUtils().getApiInstance()
             ?.getJson()

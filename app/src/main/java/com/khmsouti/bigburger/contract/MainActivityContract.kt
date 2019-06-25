@@ -1,4 +1,4 @@
-package com.khmsouti.bigburger
+package com.khmsouti.bigburger.contract
 
 import com.khmsouti.bigburger.model.Item
 
