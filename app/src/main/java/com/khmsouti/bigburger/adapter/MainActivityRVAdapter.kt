@@ -55,11 +55,10 @@ class MainActivityRVAdapter(private var itemList: ArrayList<Item>, private var c
 
         //Handling Picasso load image process
         fun loadImage(url: String) {
-            Picasso.get().load(url).error(R.drawable.error).into(image, object : Callback {
+            Picasso.get().load(url).error(R.drawable.ic_no_image_white_96dp).into(image, object : Callback {
                 override fun onError(e: Exception?) {
                     //wil load the image at "R.drawable.error" instead
                 }
-
                 override fun onSuccess() {
                 }
 

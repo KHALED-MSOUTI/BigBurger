@@ -24,10 +24,12 @@ import java.util.concurrent.TimeUnit
 /**
  * Instrumented test, which will execute on an Android device.
  *
- * See [testing documentation](http://d.android.com/tools/testing).
+ * If connection status is offline this test will go throw IllegalArgumentException error.
+ * If devise is connected this test mainly will test the RecyclerView and under the hood will test
+ * Retrofit2 call
  */
 @RunWith(AndroidJUnit4::class)
-class InstrumentedTest {
+class ViewTest {
     @get:Rule
     var mainActivityActivityTestRule: ActivityTestRule<MainActivity> = ActivityTestRule(
         MainActivity::class.java

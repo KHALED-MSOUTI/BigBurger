@@ -153,7 +153,7 @@ public class SwipeDecorator {
      * A Builder for the RecyclerViewSwipeDecorator class
      */
     public static class Builder {
-        private SwipeDecorator mDecorator;
+        private final SwipeDecorator mDecorator;
 
         /**
          * Create a builder for a RecyclerViewsSwipeDecorator

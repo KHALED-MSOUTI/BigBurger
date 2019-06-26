@@ -2,6 +2,7 @@ package com.khmsouti.bigburger.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,6 +39,9 @@ class CartActivity : AppCompatActivity(), CartActivityContract.View {
         val bottomSheetBehavior = BottomSheetBehavior.from(bottom_sheet_layout)
         bottomSheetBehavior.isHideable = false
         initSwipe()
+        submitOrderBtn.setOnClickListener {
+            Toast.makeText(applicationContext, getString(R.string.orderSubmitted), Toast.LENGTH_LONG).show()
+        }
     }
 
     override fun onBackPressed() {

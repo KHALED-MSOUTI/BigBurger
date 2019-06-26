@@ -5,6 +5,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
+    <!-- Because of unsecured data source "a link with http:// not https://"
+    I had to set  android:usesCleartextTraffic to true
+       if i didn't do that when this application run on API 28 or higher
+        retrofitCall will not success because security policies of API 28-->
     <application
             android:allowBackup="false"
             android:icon="@mipmap/ic_launcher"
