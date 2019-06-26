@@ -6,7 +6,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/mainRootLayout"
-        android:background="@color/colorPrimary"
         tools:context=".activity.MainActivity">
 
     <!--This view for targeting it by the spotlight, it has no other job -->
