@@ -9,14 +9,15 @@
     <string name="tryAgain">try again</string>
     <string name="noInternetConnection">No internet connection</string>
     <string name="noConnection">No Connection</string>
-    <string name="TAX_RATE" translatable="false">18%</string>
-
-    <!--Strings used in tags -->
-    <string name="SHARED_PREFERENCES_FIRST_USE_BOOLEAN" translatable="false">IS_FIRST_USE</string>
-    <string name="INTENT_TAG_TO_CART_ACTIVITY" translatable="false">TAG_TO_CART_ACTIVITY</string>
-    <string name="INTENT_TAG_FROM_CART_ACTIVITY" translatable="false">TAG_FROM_CART_ACTIVITY</string>
     <string name="food_image">Food Image</string>
     <string name="orderSubmitted">Order Submitted</string>
 
+
+    <!--Constant Strings -->
+    <string name="SHARED_PREFERENCES_FIRST_USE_BOOLEAN" translatable="false">IS_FIRST_USE</string>
+    <string name="INTENT_TAG_TO_CART_ACTIVITY" translatable="false">TAG_TO_CART_ACTIVITY</string>
+    <string name="INTENT_TAG_FROM_CART_ACTIVITY" translatable="false">TAG_FROM_CART_ACTIVITY</string>
+    <string name="TAX_RATE" translatable="false">18%</string>
+    <string name="SAVED_INSTANCE_CART_LIST">SAVED_INSTANCE_CART_LIST</string>
 
 </resources>

@@ -191,4 +191,16 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         return activeNetwork?.isConnected ?: false
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelableArrayList(getString(R.string.SAVED_INSTANCE_CART_LIST), cartList)
+    }
+
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        cartList = savedInstanceState.getParcelableArrayList(getString(R.string.SAVED_INSTANCE_CART_LIST))
+        setCounterFabCount()
+    }
+
 }
