@@ -1,3 +1,6 @@
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4c07fed882684fa5878acaf2bfb15f1f)](https://app.codacy.com/app/KHALED-MSOUTI/BigBurger?utm_source=github.com&utm_medium=referral&utm_content=KHALED-MSOUTI/BigBurger&utm_campaign=Badge_Grade_Dashboard)
+<br/>
 <h2> <img align="left" src="/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width="128" height="128"> 
   <br />BigBurger</h2>
   
@@ -9,7 +12,6 @@ view the catalog and compose a shopping cart.
 
 ### Features
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4c07fed882684fa5878acaf2bfb15f1f)](https://app.codacy.com/app/KHALED-MSOUTI/BigBurger?utm_source=github.com&utm_medium=referral&utm_content=KHALED-MSOUTI/BigBurger&utm_campaign=Badge_Grade_Dashboard)
 
 <ul>
  <li> This app is written with the standards of high-quality code.</li>
