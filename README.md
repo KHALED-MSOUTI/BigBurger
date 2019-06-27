@@ -7,7 +7,7 @@
 Big Burger, a new Burger player arrives in Bursa, This is a  first version of the mobile application to
 view the catalog and compose a shopping cart.
 
-## Features
+### Features
 <ul>
  <li> This app is written with the standards of high-quality code.</li>
  <li> Uses Androidx libraries.</li>
